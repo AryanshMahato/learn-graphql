@@ -1,4 +1,4 @@
 export class EnvConfigProvider {
   // Returns current running environment
-  public static getEnvironemnt = () => process.env.ENVIRONTMENT || 'local';
+  public static getEnvironment = () => process.env.NODE_ENV || 'local';
 }
