@@ -9,7 +9,7 @@ import {
 import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()
-@Entity({ name: 'post' })
+@Entity({ name: 'user' })
 export class Post extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn('uuid')
@@ -26,6 +26,9 @@ export class Post extends BaseEntity {
   updatedAt = new Date();
 
   @Field()
+  @Column({ unique: true })
+  username: string;
+
   @Column()
-  title: string;
+  password: string;
 }
