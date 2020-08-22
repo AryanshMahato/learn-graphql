@@ -21,4 +21,18 @@ export class PostResolver {
     post.title = title;
     return await post.save();
   }
+
+  @Mutation(() => Post)
+  async updatePost(
+    @Arg('title') title: string,
+    @Arg('id') id: string,
+  ): Promise<Post | undefined> {
+    const post = await Post.findOne(id);
+
+    if (post) {
+      post.title = title;
+      return await post.save();
+    }
+    return;
+  }
 }
