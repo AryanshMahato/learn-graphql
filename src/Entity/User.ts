@@ -10,7 +10,7 @@ import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()
 @Entity({ name: 'user' })
-export class Post extends BaseEntity {
+export class User extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn('uuid')
   id: string;
