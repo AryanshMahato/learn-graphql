@@ -9,10 +9,10 @@ export class DatabaseConfigProvider {
     username: process.env.TYPEORM_USERNAME!,
     password: process.env.TYPEORM_PASSWORD!,
     database: process.env.TYPEORM_DATABASE!,
-    entities: ['entity/*.ts'],
-    migrations: ['migration/*.ts'],
+    entities: ['Entity/*.ts'],
+    migrations: ['Migration/*.ts'],
     cli: {
-      migrationsDir: 'migration',
+      migrationsDir: 'Migration',
     },
   });
 }
