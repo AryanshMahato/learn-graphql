@@ -1,0 +1,29 @@
+{
+  "name": "learn-graphql",
+  "version": "1.0.0",
+  "description": "Reedit Clone to learn GraphQL",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "start:dev": "npm-run-all --parallel watch dev",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AryanshMahato/learn-graphql.git"
+  },
+  "author": "Aryansh Mahato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AryanshMahato/learn-graphql/issues"
+  },
+  "homepage": "https://github.com/AryanshMahato/learn-graphql#readme",
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "npm-run-all": "^4.1.5",
+    "nodemon": "^2.0.4",
+    "typescript": "^4.0.2"
+  }
+}
