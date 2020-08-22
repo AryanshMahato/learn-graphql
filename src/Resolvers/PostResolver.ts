@@ -15,6 +15,7 @@ export class PostResolver {
     return await Post.findOne(id);
   }
 
+  // Create Post
   @Mutation(() => Post)
   async createPost(@Arg('title') title: string): Promise<Post> {
     const post = new Post();
@@ -22,7 +23,8 @@ export class PostResolver {
     return await post.save();
   }
 
-  @Mutation(() => Post)
+  // Update Post by Id
+  @Mutation(() => Post, { nullable: true })
   async updatePost(
     @Arg('title') title: string,
     @Arg('id') id: string,
