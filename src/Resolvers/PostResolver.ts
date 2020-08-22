@@ -1,4 +1,4 @@
-import { Arg, Query, Resolver } from 'type-graphql';
+import { Arg, Mutation, Query, Resolver } from 'type-graphql';
 import { Post } from '../Entity/Post';
 
 @Resolver()
@@ -11,7 +11,14 @@ export class PostResolver {
 
   // Get single Post By Id
   @Query(() => Post, { nullable: true })
-  async post(@Arg('id', () => String) id: string): Promise<Post | undefined> {
+  async post(@Arg('id') id: string): Promise<Post | undefined> {
     return await Post.findOne(id);
+  }
+
+  @Mutation(() => Post)
+  async createPost(@Arg('title') title: string): Promise<Post> {
+    const post = new Post();
+    post.title = title;
+    return await post.save();
   }
 }
