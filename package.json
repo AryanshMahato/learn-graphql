@@ -24,13 +24,18 @@
   },
   "homepage": "https://github.com/AryanshMahato/learn-graphql#readme",
   "dependencies": {
+    "apollo-server-express": "^2.16.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
     "pg": "^8.3.2",
     "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0",
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.1",
+    "@types/express": "^4.17.7",
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",
     "@typescript-eslint/eslint-plugin": "^3.9.1",

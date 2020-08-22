@@ -1,4 +1,5 @@
-//TODO: Change it with Real Express Server
-export const app = () => {
-  console.log('Server Started');
-};
+import express from 'express';
+
+const app = express();
+
+export default app;
