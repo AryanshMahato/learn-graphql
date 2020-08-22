@@ -21,6 +21,9 @@
     "url": "https://github.com/AryanshMahato/learn-graphql/issues"
   },
   "homepage": "https://github.com/AryanshMahato/learn-graphql#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "@types/eslint": "^7.2.1",
     "@types/jest": "^26.0.10",
