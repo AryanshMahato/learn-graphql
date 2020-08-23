@@ -4,14 +4,15 @@
   "description": "Reedit Clone to learn GraphQL",
   "main": "dist/index.js",
   "scripts": {
-    "start:dev": "npm-run-all --parallel watch dev",
+    "start:dev": "npm-run-all --parallel start:redis watch dev",
     "dev": "nodemon --inspect dist/index.js",
     "start": "node dist/index.js",
     "migration:generate": "ts-node ./node_modules/typeorm/cli migration:generate",
     "migration:run": "ts-node ./node_modules/typeorm/cli migration:run",
     "watch": "tsc -w",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "test": "jest"
+    "test": "jest",
+    "start:redis": "redis-server"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "graphql": "^15.3.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.3.2",
+    "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.0.0",
     "typeorm": "^0.2.25"
@@ -41,6 +43,7 @@
     "@types/jest": "^26.0.10",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.6.0",
+    "@types/redis": "^2.8.26",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
     "@typescript-eslint/parser": "^3.9.1",
     "class-validator": "^0.12.2",

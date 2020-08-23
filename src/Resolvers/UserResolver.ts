@@ -101,7 +101,6 @@ export class UserResolver {
 
     if (user) {
       const valid = await argon.verify(user.password, options.password);
-      console.log(valid);
       if (valid) {
         // Authenticated & Generating tokens
         const authToken = await JWTService.generateToken(options.username);

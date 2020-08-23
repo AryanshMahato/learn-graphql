@@ -119,3 +119,7 @@ dist
 
 # IDE
 .idea/
+
+
+# Redis
+*.rdb
