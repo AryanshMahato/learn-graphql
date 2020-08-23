@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { InvalidToken } from '../Errors/InvalidToken';
 import redis from 'redis';
 import { promisify } from 'util';
-import { StoringError } from '../Errors/StoringError';
+import { FailedToSave } from '../Errors/FailedToSave';
 // Redis client initialization
 const redisClient = redis.createClient();
 
@@ -83,6 +83,6 @@ export class JWTService {
       // Token Pushed to Redis
       return token;
     }
-    throw new StoringError('Cannot store token to Redis');
+    throw new FailedToSave('Cannot store token to Redis');
   }
 }
