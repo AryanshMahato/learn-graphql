@@ -10,6 +10,7 @@ export const createApolloServer = async (app: Application) => {
       resolvers: [PostResolver, UserResolver],
       validate: false,
     }),
+    context: ({ req }) => ({ req }),
   });
 
   apolloServer.applyMiddleware({ app });

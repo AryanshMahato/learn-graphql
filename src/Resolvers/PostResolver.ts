@@ -1,5 +1,6 @@
-import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Mutation, Query, Resolver, UseMiddleware } from 'type-graphql';
 import { Post } from '../Entity/Post';
+import { isAuth } from '../Middlewares/isAuth';
 
 @Resolver()
 export class PostResolver {
@@ -10,6 +11,7 @@ export class PostResolver {
   }
 
   // Get single Post By Id
+  @UseMiddleware(isAuth)
   @Query(() => Post, { nullable: true })
   async post(@Arg('id') id: string): Promise<Post | undefined> {
     return await Post.findOne(id);
