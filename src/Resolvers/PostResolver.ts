@@ -18,6 +18,7 @@ export class PostResolver {
   }
 
   // Create Post
+  @UseMiddleware(isAuth)
   @Mutation(() => Post)
   async createPost(@Arg('title') title: string): Promise<Post> {
     const post = new Post();
@@ -26,6 +27,7 @@ export class PostResolver {
   }
 
   // Update Post by Id
+  @UseMiddleware(isAuth)
   @Mutation(() => Post, { nullable: true })
   async updatePost(
     @Arg('title') title: string,

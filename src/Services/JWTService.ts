@@ -41,9 +41,8 @@ export class JWTService {
 
   // Returns Username after taking token as input
   public static getUsername(token: string) {
-    const decode = jwt.decode(token);
+    const decode = jwt.decode(token) as { username: string };
 
-    // @ts-ignore
     return decode.username;
   }
 
